@@ -9,9 +9,15 @@ String.prototype.reverse = function() {
 function Phrase(content) {
  this.content = content;
 
+ // Returns conent without punctutation
+
+ this.letters = function() {
+   return this.content.split("").filter(c => c.match(/[a-z]/i)).join("");
+ }
+
  // Returns content processed for palindrome testing.
  this.processedContent = function processedContent() {
-   return this.content.toLowerCase();
+   return this.letters().toLowerCase();
  }
 
  // Returns true if the phrase is a palindrome, false otherwise.
