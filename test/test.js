@@ -13,7 +13,7 @@ describe("Phrase", function() {
     it("should return true for a plain palindrome", function() {
       let plainPalindrome = new Phrase("racecar");
       assert(plainPalindrome.palindrome());
-    })
+    });
 
     it("should return true for a mixed-case palindrome", function() {
       let mixedCasePalindrome = new Phrase("RacEcAr");
@@ -24,6 +24,11 @@ describe("Phrase", function() {
     it("should return true for a palindrome with punctutation", function() {
       let punctuatedPalindrome = new Phrase("Madam, I'm Adam.");
       assert(punctuatedPalindrome.palindrome());
+    });
+
+    it("should return false for an empty string", function() {
+      let emptyPhrase = new Phrase("");
+      assert(!emptyPhrase.palindrome());
     })
   })
 
